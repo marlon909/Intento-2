@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autenticación</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="password"] {
+            font-size: 1.5em;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 1.5em;
+            }
+            input[type="password"], button {
+                font-size: 1.2em;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Por favor, ingresa una contraseña valida</h2>
+        <form id="authForm">
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Aceptar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('authForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            const urls = {
+                '6020': 'https://forms.gle/XetQXR5CtRkjvCou8',
+                '3050': 'https://forms.gle/XetQXR5CtRkjvCou8',
+                '4070': 'https://forms.gle/XetQXR5CtRkjvCou8',
+                '8010': 'https://forms.gle/XetQXR5CtRkjvCou8',
+                '9100': 'https://forms.gle/XetQXR5CtRkjvCou8',
+                '1020': 'https://forms.gle/XetQXR5CtRkjvCou8',
+                '3070': 'https://forms.gle/XetQXR5CtRkjvCou8',
+                '8001': 'https://forms.gle/XetQXR5CtRkjvCou8'
+            };
+            if (urls[password]) {
+                window.location.href = urls[password];
+            } else {
+                alert('Contraseña incorrecta, digite una correcta');
+            }
+        });
+    </script>
+</body>
+</html>
